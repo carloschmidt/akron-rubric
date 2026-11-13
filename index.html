@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formative for Akron Public Schools</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=7" />
+  </head>
+  <body>
+    <header class="masthead">
+      <img class="logo" src="assets/formative-logo.svg" alt="Formative by Newsela" width="170" height="39" />
+      <p class="prepared"></p>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1 id="title"></h1>
+        <p id="intro"></p>
+        <div class="draft-banner" id="draft-banner" hidden></div>
+      </section>
+
+      <nav class="weights" aria-label="Rubric areas by weight">
+        <ol id="weight-strip"></ol>
+      </nav>
+
+      <table class="rubric" id="rubric">
+        <thead>
+          <tr>
+            <th scope="col" class="col-area">Area</th>
+            <th scope="col" class="col-q">Criteria</th>
+            <th scope="col" class="col-w">Weight</th>
+            <th scope="col" class="col-a">Our response</th>
+          </tr>
+        </thead>
+      </table>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <dialog class="focus" id="focus" aria-labelledby="focus-q">
+      <div class="focus-panel" tabindex="-1" autofocus>
+        <header class="focus-top">
+          <p class="focus-area"><strong id="focus-area-name"></strong> <span id="focus-area-weight"></span></p>
+          <p class="focus-count" id="focus-count" aria-live="polite"></p>
+          <button class="focus-close" type="button" aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </header>
+        <div class="focus-body" id="focus-body">
+          <div class="focus-media" id="focus-media"></div>
+          <div class="focus-text">
+            <h2 class="focus-q" id="focus-q"></h2>
+            <div class="focus-answer" id="focus-answer"></div>
+            <p class="focus-caption" id="focus-caption"></p>
+          </div>
+        </div>
+        <footer class="focus-bottom">
+          <button class="focus-nav focus-prev" type="button" aria-label="Previous question">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <button class="focus-nav focus-next" type="button" aria-label="Next question">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </footer>
+      </div>
+    </dialog>
+
+    <script src="content.js?v=7"></script>
+    <script src="app.js?v=7"></script>
+  </body>
+</html>
