@@ -302,6 +302,7 @@ a {
 .cell-a .answer {
   margin: 0;
   max-width: 68ch;
+  white-space: pre-line;
 }
 
 .cell-a.is-draft .answer {
@@ -569,6 +570,7 @@ a {
 
 .focus-answer .answer {
   margin: 0;
+  white-space: pre-line;
   font-size: 18px;
   line-height: 1.6;
 }

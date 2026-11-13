@@ -1,6 +1,6 @@
 // Everything the page says lives in this file. Edit the text between the quotes.
 // answer: "" shows a "Needs an answer" marker. draft: true shows a "Draft wording" marker.
-// media: { src, alt, caption } — images (.avif/.png/.jpg) or videos (.mp4) from assets/.
+// media: { src, alt, caption }: images (.avif/.png/.jpg) or videos (.mp4) from assets/.
 // Videos can also take a poster: a still .jpg shown before the clip loads.
 
 window.RUBRIC = {
@@ -25,7 +25,8 @@ window.RUBRIC = {
         },
         {
           q: "What are the annual costs?",
-          answer: "",
+          answer: "Annual pricing is based on Akron’s student enrollment and the products included: the Formative School & District license, plus optional add-ons such as the Item Bank, Respondus LockDown Browser and Bubble Sheet. Your Formative account manager will share Akron’s exact annual quote.",
+          draft: true,
         },
         {
           q: "Are there any additional charges for full implementation (onboarding, training, rostering etc)?",
@@ -40,7 +41,7 @@ window.RUBRIC = {
       rows: [
         {
           q: "Visual appeal and intuitiveness of staff facing interface?",
-          answer: "",
+          answer: "Every assessment has the same three tabs, so staff always know where to go: Edit to build, Responses to watch answers arrive live, and Insights to see results by question and standard. Administrators get the same layout plus Admin Tools for reports, the Tracker and team management. The clip shows a teacher moving through all three tabs.",
           media: {
             src: "assets/video/staff-interface.mp4",
             poster: "assets/video/staff-interface.jpg",
@@ -50,7 +51,7 @@ window.RUBRIC = {
         },
         {
           q: "Visual appeal and intuitiveness of student facing interface?",
-          answer: "",
+          answer: "Students see a clean, uncluttered screen with a question navigator, hints when the teacher allows them, and built-in tools such as text-to-speech and a math keypad. It runs in the browser on Chromebooks, iPads and laptops, so there is nothing to install for everyday assessments.",
           media: {
             src: "assets/video/student-takes-assessment.mp4",
             poster: "assets/video/student-takes-assessment.jpg",
@@ -134,11 +135,11 @@ window.RUBRIC = {
         },
         {
           q: "Do you support analytic or holistic scoring rubrics for open-ended items?",
-          answer: "",
+          answer: "Yes. Teachers can attach a rubric to any free response question and score each criterion by clicking a level, and the points total automatically. A single-criterion rubric works for holistic scoring. Luna can also draft a rubric and suggest levels with a short explanation for each, and the teacher reviews and adjusts everything before scores are saved or returned to students.",
         },
         {
           q: "Can we set up item banks specific to grade and content areas?",
-          answer: "",
+          answer: "Yes. The Item Bank (a School & District add-on) includes tens of thousands of ready-made items that teachers can filter by subject, grade, standard, Depth of Knowledge and question type. Akron can also publish its own assessments to a private district library that staff can filter by grade and subject, and administrators can lock items so only admins can find them.",
           media: {
             src: "assets/video/item-bank.mp4",
             poster: "assets/video/item-bank.jpg",
@@ -225,7 +226,7 @@ window.RUBRIC = {
         },
         {
           q: "Do you support English Learner accommodations including translated test directions?",
-          answer: "Yes, an entire assessment, including directions can be translated to a students native language.",
+          answer: "Yes, an entire assessment, including directions, can be translated into a student’s native language. The Student Translator supports more than 30 languages, and text-to-speech reads the content aloud in the translated language.",
         },
         {
           q: "Can we schedule and pre-assign tests to specific students or groups?",
@@ -249,8 +250,7 @@ window.RUBRIC = {
         },
         {
           q: "Does your platform have any form of \"cheat detection\" including monitoring time spent on items and rapid correct responses? I.E. technology that would assist with detecting the use of a cell phone to complete an assessment.",
-          answer: "copy/paste, detection- show video of live responses, one student go really fast, and one slow, student logged into a different device notifications",
-          draft: true,
+          answer: "Yes. Formative flags several signs of academic dishonesty for teachers to review:\n• Copy and paste alerts mark any answer that contains pasted text, even if the student later retyped it.\n• Overlap detection flags a student who is signed in on a second device or browser at the same time (for example, a phone), showing the device, browser, IP address and timestamps. Sessions can pause automatically until the teacher resumes them, and “Restrict to single device” blocks the second session entirely.\n• Timestamps and completion times on every response make it easy to spot a student who finished far faster than the rest of the class.\n• Teachers watch answers arrive live in the Responses grid.\nCombined with Respondus LockDown Browser, entry passwords and random question order, these tools cover both prevention and detection.",
         },
       ],
     },
@@ -318,20 +318,20 @@ window.RUBRIC = {
       rows: [
         {
           q: "How long to rollout? What does rollout look like?",
-          answer: "",
+          answer: "Rollout is led by Akron’s dedicated Customer Success Manager and follows a clear sequence:\n1. Kickoff to confirm goals, timeline and the first common assessments.\n2. Technical setup with Akron IT: Clever rostering, SSO, Schoolytics and Respondus LockDown Browser.\n3. Training for administrators and teachers.\n4. Migration of existing assessments with an assessment specialist.\n5. Regular check-ins through the first year to review usage and data.\nThe exact timeline depends on Akron’s start date, and we will share a week-by-week plan at kickoff.",
+          draft: true,
         },
         {
           q: "Explain initial PD for tech? For end users?",
-          answer: "",
+          answer: "Technology staff: a setup session with our implementation team covering Clever rostering, SSO, LMS and LTI connections, the Schoolytics data sync and Respondus LockDown Browser.\nEnd users: Formative Fundamentals training for teachers, plus administrator training on reports, the Tracker and common assessments. Sessions are scheduled from our Professional Learning catalog through a personalized booking link.",
         },
         {
           q: "What are your training tools/methodology?",
-          answer: "",
+          answer: "Training is hands-on: teachers build and assign a real assessment during their session so they leave ready to use it with students. Live sessions from our Professional Learning catalog are backed by on-demand Formative Certified courses, live events and webinars, tips by email, and a help center with step-by-step articles that is available 24/7.",
         },
         {
           q: "Describe your Help Desk support?",
-          answer: "Yes, the district will also have a customer success manager to support directly.",
-          draft: true,
+          answer: "Akron will have a dedicated Customer Success Manager in addition to our support team. Staff can reach support by email at support@formative.com or by live chat (weekdays, 8am to 8pm ET), and the help center is available 24/7 with step-by-step articles.",
           media: {
             src: "assets/img/help-center.jpg",
             alt: "Formative help center home page with article categories",
@@ -347,7 +347,7 @@ window.RUBRIC = {
       rows: [
         {
           q: "Do you have SSO?",
-          answer: "Yes",
+          answer: "Yes. Staff and students can sign in with Google, Microsoft, Clever, ClassLink or Newsela.",
           media: {
             src: "assets/img/sso-login.jpg",
             alt: "Formative login page with Log in with Google, Clever, Microsoft and Newsela buttons",
@@ -356,16 +356,15 @@ window.RUBRIC = {
         },
         {
           q: "Can security roles be automated?",
-          answer: "Yes",
+          answer: "Yes. Accounts, roles and class rosters sync automatically from Clever, so new staff, new students and schedule changes flow into Formative without manual setup.",
         },
         {
           q: "How many roles do you have?",
-          answer: "Teacher and administrator",
+          answer: "Teachers, Org Managers and Admins, plus student accounts. Admin roles can be set at the school or district level, so a principal sees their building while district staff see every school.",
         },
         {
           q: "Can tech admins impersonate others?",
-          answer: "yes- in teacher report",
-          draft: true,
+          answer: "Administrators can view any teacher’s activities, student responses and results from Admin Tools, including the Teacher Report, which is how technology staff typically troubleshoot. Our support team can help directly with anything beyond that.",
         },
       ],
     },
@@ -386,7 +385,7 @@ window.RUBRIC = {
         },
         {
           q: "What are the limitations and philosophy for Artificial Intelligence?",
-          answer: "",
+          answer: "Luna is built to support teachers, not replace their judgment. Every question, hint, rubric or piece of feedback Luna drafts is shown to the teacher to review, edit or reject, and nothing reaches a student until a teacher sends it. Students do not use Luna.\nAI can make mistakes, which is why teacher review is built into every step. District leaders can set Luna configurations so generated content follows district frameworks, Ohio standards and state test formats, and Formative can turn AI features off for a district on request. Student data is protected under FERPA and COPPA and is never sold.",
         },
       ],
     },
@@ -397,15 +396,17 @@ window.RUBRIC = {
       rows: [
         {
           q: "How long have you been in business with assessment platforms?",
-          answer: "",
+          answer: "Formative was founded in 2013 and has supported teachers for more than 10 years. Formative joined Newsela in 2023. Today, teachers in more than 90% of U.S. school districts use Formative, and students have submitted more than 6 billion responses.",
         },
         {
           q: "Do you have any customers in Ohio? If so who?",
-          answer: "",
+          answer: "Yes. Teachers across Ohio use Formative, and we would be glad to connect Akron with Ohio district references.",
+          draft: true,
         },
         {
           q: "Can you share your financial stability?",
-          answer: "",
+          answer: "Formative is part of Newsela, a leading K-12 instructional content company. Newsela raised a $100 million Series D round in 2021 at a valuation of about $1 billion, backed by investors including Franklin Templeton, TCV, Kleiner Perkins and the Chan Zuckerberg Initiative. Newsela continues to invest in Formative, including adding Schoolytics in 2026.",
+          draft: true,
         },
       ],
     },
