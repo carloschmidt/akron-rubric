@@ -2,6 +2,7 @@
 // answer: "" shows a "Needs an answer" marker. draft: true shows a "Draft wording" marker.
 // media: { src, alt, caption }: images (.avif/.png/.jpg) or videos (.mp4) from assets/.
 // Videos can also take a poster (a still .jpg shown before the clip loads) and wide: true to sit on top in focus mode.
+// media can be a list of clips; give each a short label for its tab in focus mode.
 
 window.RUBRIC = {
   district: "Akron Public Schools",
@@ -62,12 +63,29 @@ window.RUBRIC = {
         {
           q: "Ease of assessment creation",
           answer: "Assessments can be created from scratch, imported from Google Drive, parsed with Luna (AI), or created at district level and shared with teachers.",
-          media: {
-            src: "assets/video/luna-create.mp4",
-            poster: "assets/video/luna-create.jpg",
-            alt: "A teacher asks Luna for grade 8 forces and motion questions, answers Luna’s follow-up, and reviews the drafted questions tagged to Ohio standards",
-            caption: "Luna drafting standards-tagged questions from one request (waits sped up)",
-          },
+          media: [
+            {
+              src: "assets/video/luna-create.mp4",
+              poster: "assets/video/luna-create.jpg",
+              alt: "A teacher asks Luna for grade 8 forces and motion questions, answers Luna’s follow-up, and reviews the drafted questions tagged to Ohio standards",
+              caption: "Luna drafting standards-tagged questions from one request (waits sped up)",
+              label: "Luna from scratch",
+            },
+            {
+              src: "assets/video/parse-pdf.mp4",
+              poster: "assets/video/parse-pdf.jpg",
+              label: "Parse an existing PDF",
+              alt: "A teacher drops a five-page AP Precalculus quiz PDF into Formative; Luna converts it into editable questions that keep their graphs, answer keys and standards tags",
+              caption: "Turning a five-page AP Precalc PDF into editable questions, graphs included (waits sped up)",
+            },
+            {
+              src: "assets/video/item-bank-add.mp4",
+              poster: "assets/video/item-bank-add.jpg",
+              label: "Add from the item bank",
+              alt: "A teacher opens the item bank, filters to Math, 11th grade and the Ohio standard F.IF.7.b, selects two items tagged to Ohio standards and adds them to the assessment",
+              caption: "Filtering the item bank by Ohio standard F.IF.7.b and adding two items",
+            },
+          ],
         },
         {
           q: "Questions can be aligned to current Ohio Learning Standards",
@@ -83,10 +101,10 @@ window.RUBRIC = {
           q: "Can we migrate our existing assessments into the platform",
           answer: "Yes, you will have an assessment specialist that can support in the migration of current assessments into the platform, so there will be less manual work for your team.",
           media: {
-            src: "assets/video/migrate.mp4",
-            poster: "assets/video/migrate.jpg",
-            alt: "A teacher drops a PDF of a printed quiz into the upload area; Luna converts it into editable multiple choice, true or false and written-response questions",
-            caption: "Dropping in a paper quiz PDF and letting Luna turn it into questions (wait sped up)",
+            src: "assets/video/parse-pdf.mp4",
+            poster: "assets/video/parse-pdf.jpg",
+            alt: "A teacher drops a five-page AP Precalculus quiz PDF into Formative; Luna converts it into editable questions that keep their graphs, answer keys and standards tags",
+            caption: "Turning a five-page AP Precalc PDF into editable questions, graphs included (waits sped up)",
           },
         },
         {
@@ -97,10 +115,10 @@ window.RUBRIC = {
           q: "Are items tagged by standard, Bloom's level, and DOK level?",
           answer: "Yes, by standard and DOK level. Bloom's Taxonomy levels could be added as well.",
           media: {
-            src: "assets/video/item-bank.mp4",
-            poster: "assets/video/item-bank.jpg",
-            alt: "The item bank filtered to 8th grade science at DOK 2, narrowing tens of thousands of items to about two thousand",
-            caption: "Filtering the item bank by subject, grade and Depth of Knowledge",
+            src: "assets/video/item-bank-add.mp4",
+            poster: "assets/video/item-bank-add.jpg",
+            alt: "A teacher opens the item bank, filters to Math, 11th grade and the Ohio standard F.IF.7.b, selects two items tagged to Ohio standards and adds them to the assessment",
+            caption: "Filtering the item bank by Ohio standard F.IF.7.b and adding two items",
           },
         },
         {
@@ -142,10 +160,10 @@ window.RUBRIC = {
           q: "Can we set up item banks specific to grade and content areas?",
           answer: "Yes. The Item Bank (a School & District add-on) includes tens of thousands of ready-made items that teachers can filter by subject, grade, standard, Depth of Knowledge and question type. Akron can also publish its own assessments to a private district library that staff can filter by grade and subject, and administrators can lock items so only admins can find them.",
           media: {
-            src: "assets/video/item-bank.mp4",
-            poster: "assets/video/item-bank.jpg",
-            alt: "The item bank filtered to 8th grade science at DOK 2",
-            caption: "Filtering the item bank by subject, grade and Depth of Knowledge",
+            src: "assets/video/item-bank-add.mp4",
+            poster: "assets/video/item-bank-add.jpg",
+            alt: "A teacher opens the item bank, filters to Math, 11th grade and the Ohio standard F.IF.7.b, selects two items tagged to Ohio standards and adds them to the assessment",
+            caption: "Filtering the item bank by Ohio standard F.IF.7.b and adding two items",
           },
         },
       ],

@@ -88,7 +88,8 @@
         td.classList.add("is-draft");
       }
       td.append(...answerNodes(row));
-      if (row.media) td.append(mediaFigure(row.media));
+      const list = mediaList(row);
+      if (list.length) td.append(mediaFigure(list[0], list.length));
       tr.append(td);
       tbody.append(tr);
     });
@@ -134,13 +135,19 @@
     return nodes;
   }
 
+  function mediaList(row) {
+    return Array.isArray(row.media) ? row.media : row.media ? [row.media] : [];
+  }
+
   // Inline media; clicks bubble to the row, which opens focus mode
-  function mediaFigure(m) {
+  function mediaFigure(m, count = 1) {
     const fig = el("figure", "media");
     const frame = el("div", "media-frame");
     frame.append(mediaNode(m, false));
     fig.append(frame);
-    if (m.caption) fig.append(el("figcaption", null, m.caption));
+    const cap = el("figcaption", null, m.caption || "");
+    if (count > 1) cap.append(el("span", "media-more", `1 of ${count} clips. Open to see all.`));
+    fig.append(cap);
     return fig;
   }
 
@@ -182,11 +189,27 @@
     const answer = $("#focus-answer");
     answer.classList.toggle("is-draft", !!(row.answer && row.draft));
     answer.replaceChildren(...answerNodes(row));
-    const media = row.media ? mediaNode(row.media, true) : null;
-    $("#focus-media").replaceChildren(media || "");
-    $("#focus-caption").textContent = row.media?.caption || "";
-    focusBody.classList.toggle("has-media", !!row.media);
-    focusBody.classList.toggle("is-wide", !!row.media?.wide);
+    const list = mediaList(row);
+    const clips = $("#focus-clips");
+    const show = (k) => {
+      const m = list[k];
+      $("#focus-media").replaceChildren(m ? mediaNode(m, true) : "");
+      $("#focus-caption").textContent = m?.caption || "";
+      focusBody.classList.toggle("is-wide", !!m?.wide);
+      clips.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-pressed", String(j === k)));
+    };
+    clips.replaceChildren(
+      ...(list.length > 1
+        ? list.map((m, k) => {
+            const b = el("button", "clip-btn", m.label || `Clip ${k + 1}`);
+            b.type = "button";
+            b.addEventListener("click", () => show(k));
+            return b;
+          })
+        : []),
+    );
+    focusBody.classList.toggle("has-media", list.length > 0);
+    show(0);
     focusBody.scrollTop = 0;
     if (!reducedMotion) {
       focusBody.classList.remove("is-changing");
@@ -232,8 +255,12 @@
     if (Math.abs(dx) > 60) renderFocus(current + (dx < 0 ? 1 : -1));
   });
 
-  const deepLink = location.hash.match(/^#q-(\d+)$/);
-  if (deepLink && items[deepLink[1] - 1]) openFocus(deepLink[1] - 1);
+  const openFromHash = () => {
+    const m = location.hash.match(/^#q-(\d+)$/);
+    if (m && items[m[1] - 1] && !(focus.open && current === m[1] - 1)) openFocus(m[1] - 1);
+  };
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
 
   // Highlight the area currently on screen
   const links = [...strip.querySelectorAll("a")];

@@ -586,6 +586,47 @@ a {
   font-style: italic;
 }
 
+.focus-clips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.focus-clips:empty {
+  display: none;
+}
+
+.clip-btn {
+  padding: 7px 14px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clip-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue-deep);
+}
+
+.clip-btn[aria-pressed="true"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.media-more {
+  display: block;
+  margin-top: 2px;
+  font-weight: 700;
+  color: var(--blue-deep);
+}
+
 .focus-caption {
   margin: 24px 0 0;
   font-size: 13px;
