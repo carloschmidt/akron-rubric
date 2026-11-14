@@ -182,9 +182,11 @@
     const answer = $("#focus-answer");
     answer.classList.toggle("is-draft", !!(row.answer && row.draft));
     answer.replaceChildren(...answerNodes(row));
-    $("#focus-media").replaceChildren(row.media ? mediaNode(row.media, true) : "");
+    const media = row.media ? mediaNode(row.media, true) : null;
+    $("#focus-media").replaceChildren(media || "");
     $("#focus-caption").textContent = row.media?.caption || "";
     focusBody.classList.toggle("has-media", !!row.media);
+    focusBody.classList.toggle("is-wide", !!row.media?.wide);
     focusBody.scrollTop = 0;
     if (!reducedMotion) {
       focusBody.classList.remove("is-changing");

@@ -596,6 +596,29 @@ a {
   display: none;
 }
 
+/* Very wide clips (side-by-side) sit on top at full width, text below */
+.focus-body.has-media.is-wide {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  overflow-y: auto;
+}
+
+.is-wide .focus-media {
+  padding: 20px 24px;
+}
+
+.is-wide .focus-media video,
+.is-wide .focus-media img {
+  max-height: 62vh;
+}
+
+.has-media.is-wide .focus-text {
+  max-width: 80ch;
+  margin-inline: 0;
+  border-left: 0;
+  overflow: visible;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .focus-body.is-changing > * {
     animation: focus-in 0.22s ease-out;

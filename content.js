@@ -1,7 +1,7 @@
 // Everything the page says lives in this file. Edit the text between the quotes.
 // answer: "" shows a "Needs an answer" marker. draft: true shows a "Draft wording" marker.
 // media: { src, alt, caption }: images (.avif/.png/.jpg) or videos (.mp4) from assets/.
-// Videos can also take a poster: a still .jpg shown before the clip loads.
+// Videos can also take a poster (a still .jpg shown before the clip loads) and wide: true to sit on top in focus mode.
 
 window.RUBRIC = {
   district: "Akron Public Schools",
@@ -55,7 +55,7 @@ window.RUBRIC = {
           media: {
             src: "assets/video/student-takes-assessment.mp4",
             poster: "assets/video/student-takes-assessment.jpg",
-            alt: "A student works through a seven-question assessment: multiple choice, a numeric answer with a math keypad, sorting items into categories and short written answers, then submits and sees their score",
+            alt: "A student works through a five-question exit ticket: multiple choice, sorting items into categories by dragging, and typed answers, then submits and sees their score",
             caption: "A student taking an assessment",
           },
         },
@@ -117,10 +117,11 @@ window.RUBRIC = {
           q: "Are objective items (MC, TEI) auto-scored in real time?",
           answer: "Yes, questions are scored in real time.",
           media: {
-            src: "assets/video/live-responses-grid.mp4",
-            poster: "assets/video/live-responses-grid.jpg",
-            alt: "The teacher's responses grid filling in question by question as two students answer live, with each answer marked correct or incorrect and running totals updating",
-            caption: "The teacher's view as students answer, recorded live",
+            src: "assets/video/live-side-by-side.mp4",
+            poster: "assets/video/live-side-by-side.jpg",
+            alt: "Side by side: on the right a student answers five questions and submits; on the left the teacher’s Responses grid marks each answer correct or incorrect the moment it is submitted",
+            caption: "Live: the teacher’s Responses page (left) fills in as a student answers (right)",
+            wide: true,
           },
         },
         {
@@ -251,6 +252,13 @@ window.RUBRIC = {
         {
           q: "Does your platform have any form of \"cheat detection\" including monitoring time spent on items and rapid correct responses? I.E. technology that would assist with detecting the use of a cell phone to complete an assessment.",
           answer: "Yes. Formative flags several signs of academic dishonesty for teachers to review:\n• Copy and paste alerts mark any answer that contains pasted text, even if the student later retyped it.\n• Overlap detection flags a student who is signed in on a second device or browser at the same time (for example, a phone), showing the device, browser, IP address and timestamps. Sessions can pause automatically until the teacher resumes them, and “Restrict to single device” blocks the second session entirely.\n• Timestamps and completion times on every response make it easy to spot a student who finished far faster than the rest of the class.\n• Teachers watch answers arrive live in the Responses grid.\nCombined with Respondus LockDown Browser, entry passwords and random question order, these tools cover both prevention and detection.",
+          media: {
+            src: "assets/video/live-side-by-side.mp4",
+            poster: "assets/video/live-side-by-side.jpg",
+            alt: "Side by side: on the right a student answers five questions and submits; on the left the teacher’s Responses grid marks each answer correct or incorrect the moment it is submitted",
+            caption: "Live: the teacher’s Responses page (left) fills in as a student answers (right)",
+            wide: true,
+          },
         },
       ],
     },
@@ -282,9 +290,10 @@ window.RUBRIC = {
           q: "Can reports be viewed at student, classroom, building, and district levels for a district shared assessment?",
           answer: "Yes, there are both teacher and administrator permissions and all data is available in real time, so insights can be actionable. Teachers are able to see their own classrooms of data, as well as PLC data together if preferred. Building administrators can see their building's data, and district administrators can see all of the data in a singular view. From there, admin are able to filter to specific views and save that report for the future.",
           media: {
-            src: "assets/img/reporting.avif",
-            alt: "An assessment report with overall score bands, standards tagged, lowest-scoring questions and demographic breakdowns",
-            caption: "An assessment report",
+            src: "assets/video/admin-reports.mp4",
+            poster: "assets/video/admin-reports.jpg",
+            alt: "The Team tracker for a district-wide assessment: overall score, then Marshall School and Wilkerson School, then a teacher, a class and each student, then the same results by standard",
+            caption: "A district admin drilling from district to school, teacher, class and student",
           },
         },
         {
@@ -308,6 +317,12 @@ window.RUBRIC = {
         {
           q: "Can district admin see building level results for teacher created assessments?",
           answer: "Yes, administrators are able to view all teacher level data without needing to do any additional steps. They can see it by building, PLC, individual teacher, student, grade level, etc.",
+          media: {
+            src: "assets/video/admin-reports.mp4",
+            poster: "assets/video/admin-reports.jpg",
+            alt: "The Team tracker drilling from the district into a school, teacher, class and students",
+            caption: "A district admin drilling from district to school, teacher, class and student",
+          },
         },
       ],
     },
